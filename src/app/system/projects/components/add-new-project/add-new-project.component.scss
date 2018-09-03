@@ -1,0 +1,19 @@
+@mixin fullWidth {
+  width: 100%;
+}
+
+.project_description {
+  @include fullWidth;
+}
+
+.custom_btn_circle {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.new_project_btn_row {
+  margin: 10px 0px 10px 10px;
+}

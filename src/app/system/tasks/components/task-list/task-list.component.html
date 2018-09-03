@@ -1,0 +1,20 @@
+<div style="margin: 0 auto; width: 1240px; max-width: 100%">
+  <div class="d-flex" style="margin: 0 20px">
+    <div style="width: 100%; margin: 0 5px">
+      <app-add-new-task-btn></app-add-new-task-btn>
+      <div *ngFor="let task of tasks|async">
+        <a routerLink="{{task.id}}"
+           routerLinkActive="active_task"
+           class="task_link"
+           style="margin: 5px 0;">
+          <input style="width: 100%; border: 1px solid transparent;outline: none" type="text"
+                 value="{{task.name}}"
+                 [(ngModel)]="task.name"
+                 (keyup)="updateTaskName(task.id, $event)">
+        </a>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

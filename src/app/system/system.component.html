@@ -1,0 +1,20 @@
+<mat-sidenav-container class="side_nav_container">
+  <mat-sidenav [opened]="true" #sidenav mode="side" class="side_nav">
+    <div class="d-flex justify-content-end">
+      <div *ngIf="onMain" class="side_nav_close d-flex align-items-center" (click)="sidenav.toggle();changeName()">
+        <i class="material-icons left_menu_icon">
+          chevron_left
+        </i>
+        <i class="material-icons">
+          menu
+        </i>
+      </div>
+    </div>
+    <app-workspaces></app-workspaces>
+    <app-projects></app-projects>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

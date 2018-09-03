@@ -1,0 +1,29 @@
+@mixin fullWidth{
+  width: 100%;
+}
+@mixin authButton{
+  color: #fff;
+  font-weight: bold;
+}
+.authorization_input {
+  @include fullWidth;
+  .mat-icon {
+    cursor: pointer;
+  }
+}
+.forgot_password_row {
+  padding: 5px 0 15px 0;
+  mat-checkbox{
+    font-size: 14px;
+  }
+}
+.login_form_footer{
+  button{
+    @include fullWidth;
+    @include authButton;
+  }
+  .no_account{
+    padding: 15px 0;
+    font-weight: 600;
+  }
+}

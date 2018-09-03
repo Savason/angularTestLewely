@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+button{
+  outline: none!important;
+}
+.mat-checkbox-layout{
+  margin-bottom: 0!important;
+}
+.cursor_pointer{
+  cursor: pointer;
+}
+.system_action_btn{
+  color: #fff!important;
+}
+.dropdown_list_btn{
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.side_nav_close{
+  cursor: pointer;
+  margin: 20px 10px;
+}
+.nav_side_nav_link{
+  cursor: pointer;
+  min-height: 35px;
+  padding-left: 10px;
+  .action_btn_block{
+    display: none;
+    position: absolute;
+    right: 0;
+    z-index: 9999;
+  }
+  &:hover .action_btn_block{
+    display: block;
+  }
+  &:hover{
+    background: #fafafa;
+  }
+}
+.ql-container.ql-snow{
+  border: none!important;
+}

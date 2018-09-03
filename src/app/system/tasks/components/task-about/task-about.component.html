@@ -1,0 +1,79 @@
+<div *ngIf="taskDetails|async" style="margin: 0 5px">
+  <div style="height: 50px" class="d-flex align-items-center justify-content-end">
+    <div class="d-flex cursor_pointer"
+         style="margin-left: 15px"
+         matTooltip="Task action"
+         matTooltipPosition="above"
+         mat-button [matMenuTriggerFor]="menu">
+      <i class="material-icons">
+        more_horiz
+      </i>
+    </div>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item
+              (click)="deleteTask(taskDetails)">
+        Delete task
+      </button>
+    </mat-menu>
+    <i class="material-icons cursor_pointer"
+       style="margin-left: 15px"
+       (click)="backToTaskList()"
+       matTooltip="To tasks list"
+       matTooltipPosition="above"
+       aria-label="Button that displays a tooltip when focused or hovered over">
+      keyboard_arrow_left
+    </i>
+  </div>
+  <input style="width: 100%; font-size: 20px; font-weight: bold;border: 1px solid transparent;outline: none"
+         type="text"
+         value="{{taskDetails.value.name}}"
+         [(ngModel)]="taskDetails.value.name"
+         (keyup)="updateTaskName(taskDetails.value.id, $event)"
+  >
+  <quill-editor
+    theme="snow"
+    appActiveOnFocus
+    [(ngModel)]="taskDetails.value.description"
+    (onContentChanged)="handleSelectionChanged(taskDetails.value.id, $event)">
+    <div appQuillActivePanel id="quill_editor_toolbar" [ngClass]="{'active':hasFocus}" quill-editor-toolbar>
+        <span class="ql-formats">
+      <select class="ql-header">
+        <option value="1"></option>
+        <option value="2"></option>
+        <option value="3"></option>
+        <option value="4"></option>
+        <option value="5"></option>
+        <option value="6"></option>
+        <option selected="selected"></option></select>
+    </span>
+      <span class="ql-formats">
+      <button type="button" class="ql-bold"></button>
+      <button type="button" class="ql-italic"></button>
+      <button type="button" class="ql-underline"></button>
+      <button type="button" class="ql-strike"></button>
+    </span>
+      <span class="ql-formats">
+      <button type="button" class="ql-code-block"></button>
+    </span>
+      <span class="ql-formats">
+      <button type="button" class="ql-list" value="ordered"></button>
+      <button type="button" class="ql-list" value="bullet"></button>
+    </span>
+      <span class="ql-formats">
+        <select appQuillActivePanel class="ql-align">
+  <option selected="selected"></option>
+  <option value="center"></option>
+  <option value="right"></option>
+  <option value="justify"></option>
+        </select>
+    </span>
+      <span class="ql-formats">
+      <button type="button" class="ql-clean"></button>
+    </span>
+      <span class="ql-formats">
+      <button appQuillActivePanel type="button" class="ql-link"></button>
+    </span>
+    </div>
+  </quill-editor>
+</div>
+

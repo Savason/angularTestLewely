@@ -1,0 +1,41 @@
+@mixin fullWidth {
+  width: 100%;
+}
+
+@mixin authButton {
+  color: #fff;
+  font-weight: bold;
+}
+
+@mixin greyBoldText {
+  color: #9ca6af;
+  font-weight: bold;
+}
+
+.authorization_input {
+  @include fullWidth;
+  .mat-icon {
+    cursor: pointer;
+  }
+}
+
+.authorization_form_footer {
+  button {
+    @include fullWidth;
+    @include authButton;
+  }
+  .sign_up_btn {
+    margin-bottom: 20px;
+  }
+  mat-checkbox {
+    @include greyBoldText;
+    padding: 15px 0;
+  }
+
+}
+
+.about_policy {
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+}

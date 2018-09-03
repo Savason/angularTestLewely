@@ -1,0 +1,10 @@
+.authorization_container {
+  min-height: 100vh;
+  .authorization_form_wrapper {
+    border-radius: 6px;
+    padding: 30px 20px;
+    border: 1px solid rgba(0, 0, 0, .03);
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, .24), 0 0 2px rgba(0, 0, 0, .12);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .24), 0 0 2px rgba(0, 0, 0, .12);
+  }
+}

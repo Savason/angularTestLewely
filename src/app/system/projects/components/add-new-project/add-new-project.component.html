@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Create your own project</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div mat-dialog-content>
+    <mat-form-field color="accent" class="project_description">
+      <input matInput
+             cdkFocusInitial
+             placeholder="Project name"
+             required
+             formControlName="name">
+      <mat-error *ngIf="form.get('name').invalid">
+        {{getErrorNameMessage()}}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field color="accent" class="project_description">
+      <textarea matInput formControlName="description" placeholder="Project description"></textarea>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions class="justify-content-between">
+    <button class="system_action_btn" type="button" mat-button (click)="onNoClick()">Cancel</button>
+    <button class="system_action_btn" mat-button cdkFocusInitial>Create</button>
+  </div>
+</form>

@@ -1,0 +1,27 @@
+@mixin fullWidth{
+  width: 100%;
+}
+.workspace_description{
+  @include fullWidth;
+}
+.new_workspace_btn_row{
+  margin: 10px 0px 10px 10px;
+}
+.custom_btn_circle{
+  height: 40px!important;
+  width: 40px!important;
+  border-radius: 50%!important;
+  display: flex!important;
+  justify-content: center!important;
+  transition: 0.1s;
+  &:hover i{
+    color: #fff;
+  }
+}
+.mat-tooltip{
+  font-size: 12px;
+  margin: 5px 0 !important;
+}
+.mat-simple-snackbar{
+  justify-content: center!important;
+}

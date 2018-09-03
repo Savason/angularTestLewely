@@ -1,0 +1,34 @@
+quill-editor {
+  display: flex;
+  flex-direction: column-reverse;
+  border: 1px solid rgba(197, 197, 197, 0.8);
+  border-radius: 3px;
+  min-width: 550px;
+  background: #fff;
+  margin-top: 15px;
+  &:hover {
+    transition: 0.2s linear;
+    border: 1px solid #979797;
+  }
+  .ql-toolbar {
+    opacity: 0;
+    position: relative;
+    z-index: -999;
+    padding: 0;
+    border: none;
+    display: none;
+  }
+  .ql-container.ql-snow {
+    border: none !important;
+  }
+  .active {
+    transition: 0.2s linear;
+    opacity: 1;
+    z-index: 999;
+    display: block;
+  }
+}
+.active_quill_editor{
+  transition: 0.2s linear;
+  border: 1px solid #979797;
+}

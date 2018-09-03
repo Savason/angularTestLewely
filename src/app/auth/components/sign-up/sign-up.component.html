@@ -1,0 +1,72 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field color="accent" class="authorization_input">
+    <input matInput
+           required
+           placeholder="Email"
+           formControlName="username">
+    <mat-error *ngIf="form.get('username').invalid">
+      {{getErrorEmailMessage()}}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field color="accent" class="authorization_input">
+    <input matInput
+           required
+           placeholder="User name"
+           formControlName="name">
+    <mat-error *ngIf="form.get('name').invalid">
+      {{getErrorUserNameMessage()}}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field color="accent" class="authorization_input">
+    <mat-select required
+                placeholder="Role in system"
+                formControlName="systemRole">
+      <mat-option *ngFor="let SystemRole of SystemRoles" [value]="SystemRole.value">
+        {{ SystemRole.viewValue }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="form.get('systemRole').invalid">
+      {{getErrorSystemRolesMessage()}}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field color="accent" class="authorization_input">
+    <mat-select required
+                placeholder="Role in team"
+                formControlName="teamRole">
+      <mat-option *ngFor="let TeamRole of TeamRoles" [value]="TeamRole.value">
+        {{TeamRole.viewValue}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="form.get('teamRole').invalid">
+      {{getErrorTeamRolesMessage()}}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field color="accent" class="authorization_input">
+    <input type="password" matInput
+           required
+           placeholder="Password"
+           formControlName="password">
+    <mat-error *ngIf="form.get('password').invalid">
+      {{getErrorPasswordMessage()}}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field color="accent" class="authorization_input">
+    <input type="password" matInput
+           required
+           placeholder="Confirm password"
+           formControlName="confirmPassword">
+    <mat-error *ngIf="form.get('confirmPassword').invalid">
+      {{getErrorConfirmPasswordMessage()}}
+    </mat-error>
+  </mat-form-field>
+  <div class="about_policy">
+    By clicking <strong>Sign Up</strong>, you agree to our
+    <strong><a [routerLink]="['/auth/signup']">Terms</a></strong>,
+    <strong><a [routerLink]="['/auth/signup']">Data Policy</a></strong> and
+    <strong><a [routerLink]="['/auth/signup']">Cookies Policy</a></strong>.
+  </div>
+  <div class="authorization_form_footer d-flex flex-column align-items-center">
+    <button class="sign_up_btn accent_btn" mat-button>SIGN UP</button>
+    <button type="button" class="accent_btn" [routerLink]="['/auth/login']" mat-button>BACK TO LOGIN</button>
+  </div>
+</form>

@@ -1,0 +1,36 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field color="accent" class="authorization_input">
+    <input matInput
+           placeholder="Username"
+           formControlName="username"
+           required
+    >
+    <mat-error *ngIf="form.get('username').invalid">
+      {{getErrorEmailMessage()}}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field color="accent" class="authorization_input">
+    <input matInput
+           required
+           type="password"
+           placeholder="Password"
+           formControlName="password"
+    >
+    <mat-error *ngIf="form.get('password').invalid">
+      {{getErrorPasswordMessage()}}
+    </mat-error>
+    <mat-icon matSuffix>
+    </mat-icon>
+  </mat-form-field>
+  <div class="forgot_password_row d-flex justify-content-between align-items-center">
+    <mat-checkbox color="accent">Remember me</mat-checkbox>
+    <button mat-button (click)="toForgotPassword()">Forgot a password?</button>
+  </div>
+  <div class="login_form_footer d-flex align-items-center flex-column">
+    <button class="accent_btn" mat-button>
+      LOGIN
+    </button>
+    <span class="no_account">Don’t have an account?</span>
+    <button class="accent_btn" type="button" [routerLink]="['/auth/signup']" mat-button>SIGN UP</button>
+  </div>
+</form>

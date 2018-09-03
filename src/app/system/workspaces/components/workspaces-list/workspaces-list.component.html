@@ -1,0 +1,21 @@
+<div *ngFor="let workspace of workspaces|async">
+  <div class="d-flex justify-content-between align-items-center nav_side_nav_link"
+       (click)="getProjectsById(workspace.id)"
+       matTooltip="{{workspace.name}}"
+       matTooltipPosition="right"
+       [class.active]="workspace.active===true">
+    <div style="width: 100%">
+      {{workspace.name}}
+    </div>
+    <div class="action_btn_block">
+      <div class="dropdown_list_btn" [matMenuTriggerFor]="menu">
+        <i class="material-icons">
+          more_vert
+        </i>
+      </div>
+      <mat-menu #menu="matMenu">
+        <button (click)="deleteWorkspaceById(workspace)" mat-menu-item>Delete</button>
+      </mat-menu>
+    </div>
+  </div>
+</div>

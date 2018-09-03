@@ -1,0 +1,21 @@
+<div *ngFor="let project of projects|async">
+  <a class="project_link d-flex align-items-center justify-content-between nav_side_nav_link"
+     routerLink="/{{project.id}}/task_list"
+     routerLinkActive="active"
+     matTooltip="{{project.name}}"
+     matTooltipPosition="right">
+    <span>
+      {{project.name}}
+    </span>
+    <div class="action_btn_block">
+    <div class="dropdown_list_btn" [matMenuTriggerFor]="menu">
+      <i class="material-icons">
+        more_vert
+      </i>
+    </div>
+    <mat-menu #menu="matMenu">
+      <button (click)="deleteProjectById(project)" mat-menu-item>Delete</button>
+    </mat-menu>
+    </div>
+  </a>
+</div>

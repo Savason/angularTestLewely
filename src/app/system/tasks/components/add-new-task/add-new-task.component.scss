@@ -1,0 +1,15 @@
+@mixin fullWidth {
+  width: 100%;
+}
+
+.task_description {
+  @include fullWidth;
+}
+
+.custom_btn_circle {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}

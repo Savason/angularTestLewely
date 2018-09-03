@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Add new task</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div mat-dialog-content>
+    <mat-form-field color="accent" class="task_description">
+      <input matInput
+             cdkFocusInitial
+             placeholder="Task name"
+             required
+             formControlName="name">
+      <mat-error *ngIf="form.get('name').invalid">
+        {{getErrorNameMessage()}}
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions class="justify-content-between">
+    <button type="button" class="system_action_btn" mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button class="system_action_btn" cdkFocusInitial>Add</button>
+  </div>
+</form>

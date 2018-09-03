@@ -1,0 +1,24 @@
+<div class="header_wrapper">
+  <div *ngIf="!onMain" class="d-flex align-items-center side_nav_btn" (click)="onClose()">
+    <i class="material-icons">
+      menu
+    </i>
+    <i class="material-icons right_menu_icon">
+      chevron_right
+    </i>
+  </div>
+  <div>
+  </div>
+  <div>
+    <mat-menu #appMenu="matMenu">
+      <button mat-menu-item>My Profile Settings</button>
+      <button mat-menu-item (click)="logout()">Logout</button>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="appMenu">
+      <i class="material-icons">
+        account_circle
+      </i>
+    </button>
+  </div>
+</div>
+
